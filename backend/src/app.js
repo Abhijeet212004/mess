@@ -9,7 +9,11 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3003',
+  origin: [
+    process.env.FRONTEND_URL || 'http://localhost:3003',
+    'https://mess-murex.vercel.app',
+    'https://mess-murex.vercel.app/'
+  ],
   credentials: true
 }));
 app.use(express.json());
